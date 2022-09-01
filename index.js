@@ -10,7 +10,7 @@ app.use(cors());
 const MongoClient = require("mongodb").MongoClient;
 
 let db = null;
-MongoClient.connect(process.env.MONGO_URL, { useUnifiedTopology: true }, (err, client) => {
+MongoClient.connect(`mongodb+srv://parkgutime:${process.env.Mongo_URL}@cluster0.jmdlgc1.mongodb.net/?retryWrites=true&w=majority`, { useUnifiedTopology: true }, (err, client) => {
   console.log("db 연결");
   if (err) {
     console.log(err);
